@@ -40,4 +40,9 @@ class Cars_detail(APIView):
             return Response(serializer.data)
         return Response(serializer.errors,status = status.HTTP_400_BAD_REQUEST)
     
+    def delete(self,request,pk):
+        car = self.get_object(pk)
+        car.delete()
+        return Response(status=status.HTTP_200_NO_CONTENT)
+    
         
