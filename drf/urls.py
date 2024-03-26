@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('students/',drfviews.list_students),
     path('student/<int:pk>/',drfviews.student_detail),
-    path('api/',include('cbvapp.urls'))
+    path('api/',include('cbvapp.urls')),
+    path('api/tests/',include('mixinapp.urls'))
 ]

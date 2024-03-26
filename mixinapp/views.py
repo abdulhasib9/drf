@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import status
 from rest_framework import generics,mixins
 from .models import Test
-from rest_framework.http import Http404
+#from rest_framework.http import Http404
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import TestSerializer
@@ -20,7 +20,7 @@ class TestList(mixins.ListModelMixin,mixins.CreateModelMixin,generics.GenericAPI
         return self.create(request)
     
     
-class TestDetail(mixins.RetriveModelMixin,mixins.UpdateModelMixin,mixins.DestroyModelMixin,generics.GenericAPIView):
+class TestDetail(mixins.RetrieveModelMixin,mixins.UpdateModelMixin,mixins.DestroyModelMixin,generics.GenericAPIView):
     queryset = Test.objects.all()
     serializer_class = TestSerializer
     
