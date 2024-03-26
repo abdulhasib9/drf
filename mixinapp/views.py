@@ -8,6 +8,25 @@ from rest_framework.views import APIView
 from .serializers import TestSerializer
 # Create your views here.
 
+#generic api view 
+
+class TestListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Test.objects.all()
+    serializer_class = TestSerializer
+
+
+class TestRetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):
+    queryset = Test.objects.all()
+    serializer_class = TestSerializer
+
+
+
+
+
+
+
+
+"""
 class TestList(mixins.ListModelMixin,mixins.CreateModelMixin,generics.GenericAPIView):
     queryset = Test.objects.all()
     serializer_class = TestSerializer
@@ -30,5 +49,7 @@ class TestDetail(mixins.RetrieveModelMixin,mixins.UpdateModelMixin,mixins.Destro
     def put(self,request,pk):
         return self.update(request,pk)
     
-    def delete(self,request):
-        return self.destroy(request)
+    def delete(self,request,pk):
+        return self.destroy(request,pk)
+        
+"""

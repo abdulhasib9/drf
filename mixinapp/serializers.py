@@ -1,7 +1,7 @@
-from .models import Test
-from rest_framework import serializers
 
+from rest_framework import serializers
+from .models import Test
 class TestSerializer(serializers.Serializer):
     class Meta:
         model = Test
-        fields = '__all__'
+        fields = ['name','lastName']
