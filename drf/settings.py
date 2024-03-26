@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drfAPI',
     'cbvapp.apps.CbvappConfig',
+    'mixinapp.apps.MixinappConfig',
 ]
 
 MIDDLEWARE = [
